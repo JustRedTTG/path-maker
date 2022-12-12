@@ -12,8 +12,8 @@ class Grid:
 
     def get_size(self) -> tuple[int, int]:
         return (
-            self.width - 1 * self.separation,
-            self.height - 1 * self.separation
+            (self.width - 1) * self.separation,
+            (self.height - 1) * self.separation
         )
 
     def get_point(self, x: int, y: int) -> tuple[int, int]:
