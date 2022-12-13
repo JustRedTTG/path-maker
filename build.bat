@@ -1,0 +1,1 @@
+cythonize -a -i curve.pyx
