@@ -1,5 +1,6 @@
 from pygameextra.mouse import pos, clicked
 from pygameextra.rect import Rect
+from pygameextra.math import dist
 
 
 def space_to_rect(x: int, y: int, width: int = 1, height: int = 1) -> Rect:
@@ -68,3 +69,10 @@ class Point:
                 self.space[1] // self.separation
             )
             self.drag['dragging'] = False
+
+    def find_nearest_space_node(self, *nodes) -> int:
+        nearest = [9999, 0]
+        for i, node in enumerate(nodes):
+            if (distance := dist(self.get_space(), node)) < nearest[0]:
+                nearest = [distance, i]
+        return nearest[1]
